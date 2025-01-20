@@ -137,18 +137,6 @@ def VENDING_MACHINE():
                         break
         if not PROD_FOUND :  #IF THE PRODUCT IS NOT FOUND
            print(Fore.CYAN + "𝙄𝙉𝙑𝘼𝙇𝙄𝘿 𝙋𝙍𝙊𝘿𝙐𝘾𝙏 𝘾𝙊𝘿𝙀 ❗ 𝙋𝙇𝙀𝘼𝙎𝙀 𝙏𝙍𝙔 𝘼𝙂𝘼𝙄𝙉.")  #PRINT STATEMENT FOR ASKING FOR NEW PRODUCT CODE
-        LUCKY_CHANCE = input(Fore.CYAN + "𝙒𝙊𝙐𝙇𝘿 𝙔𝙊𝙐 𝙇𝙄𝙆𝙀 𝙏𝙊 𝙋𝘼𝙔 🔟 𝘼𝙀𝘿 𝙁𝙊𝙍 𝘼 𝙍𝘼𝙉𝘿𝙊𝙈 𝙋𝙍𝙊𝘿𝙐𝘾𝙏 𝘼𝙉𝘿 𝙏𝙀𝙎𝙏 𝙔𝙊𝙐𝙍 𝙇𝙐𝘾𝙆? (𝙔𝙀𝙎/𝙉𝙊)🎮:").strip().lower()#GAME INTRO
-        if LUCKY_CHANCE == "yes":  #ENSURING THE USER ANSWER IS CASE INSENSITIVE
-                LUCKY_CHANCE_MONEY = input(Fore.RED +"𝙋𝙇𝙀𝘼𝙎𝙀 𝙀𝙉𝙏𝙀𝙍 𝙀𝙓𝘼𝘾𝙏𝙇𝙔 🔟 𝘼𝙀𝘿 𝙏𝙊 𝙒𝙄𝙉 𝙏𝙃𝙄𝙎 𝙂𝘼𝙈𝙀(𝙀𝙭𝙖𝙢𝙥𝙡𝙚: 🔟):💰 ").strip()#ASKING MONEY FOR THE GAME
-                try:
-                    if float(LUCKY_CHANCE_MONEY) == 10: #CONVERTING STRING INTO FLOAT FOR COMPARISON
-                     print(Fore.GREEN + f"𝘾𝙊𝙉𝙍𝘼𝙏𝙀𝙎! 𝙔𝙊𝙐 𝙒𝙊𝙉 {SUGGEST_ITEM}. 𝙋𝙇𝙀𝘼𝙎𝙀 𝘾𝙊𝙇𝙇𝙀𝘾𝙏 𝙄𝙏 𝙒𝙄𝙏𝙃 𝙏𝙃𝙀 𝙊𝙏𝙃𝙀𝙍 𝙄𝙏𝙀𝙈𝙎🏅")#IF THE USER ENTERS THE RIGHT AMOUNT
-                    else:
-                      print(Fore.CYAN + "𝙏𝙃𝙀 𝙀𝙉𝙏𝙀𝙍𝙀𝘿 𝘼𝙈𝙊𝙐𝙉𝙏 𝙄𝙎 𝙉𝙊 🔟 𝘼𝙀𝘿. 𝘽𝙀𝙏𝙏𝙀𝙍 𝙇𝙐𝘾𝙆 𝙉𝙀𝙓𝙏 𝙏𝙄𝙈𝙀!🫡")#IF THE USER ENTERS WRONG AMOUNT
-                except ValueError:
-                  print(Fore.RED +"𝙄𝙉𝙑𝘼𝙇𝙄𝘿 𝙄𝙈𝙋𝙐𝙏! 𝙋𝙇𝙀𝘼𝙎𝙀 𝙀𝙉𝙏𝙀𝙍 𝘼 𝙑𝘼𝙇𝙄𝘿 𝙉𝙐𝙈𝘽𝙀𝙍 𝙁𝙊𝙍 𝙋𝘼𝙔𝙈𝙀𝙉𝙏.🤨")#IF THE USER ENTER WRONG KEYWORD
-        else:
-             print(Fore.CYAN +"NO PROBLEM🤗")#IF THE USER SAYS NO FOE THE GAME
         SUGGEST_ITEM = suggesteditem() #MAKING THIS EQUAL
         print(Fore.CYAN + f"𝙒𝙀 𝙒𝙊𝙐𝙇𝘿 𝙎𝙐𝙂𝙂𝙀𝙎𝙏 𝙔𝙊𝙐 𝙏𝙊 𝙏𝙍𝙔: {SUGGEST_ITEM}👌 ") #PRINTING THE SUGGESTED ITEM
         MORE_ITEMS = input(Fore.RED + "𝘿𝙊 𝙔𝙊𝙐 𝙒𝘼𝙉𝙏 𝙏𝙊 𝘼𝘿𝘿 𝙈𝙊𝙍𝙀 𝙄𝙏𝙀𝙈𝙎❓ (𝙔𝙀𝙎/𝙉𝙊):").strip().lower()  #PRINT STATEMENT FOR MORE ITEMS
@@ -166,5 +154,17 @@ def VENDING_MACHINE():
            for item in Cart: #FOR LOOP FOR ALL THE ITEMS IN CART
                 Table.add_row([Fore.RED + item['ORDER ID'], item['PRODUCT NAME'], item['PRICE'], item['QUANTITY'],  item.get('CHANGE', '-')]) #PRINTING THE ROWS
            print(Table) #PRINTING THE TABLE
-           break
+           LUCKY_CHANCE = input(Fore.CYAN + "𝙒𝙊𝙐𝙇𝘿 𝙔𝙊𝙐 𝙇𝙄𝙆𝙀 𝙏𝙊 𝙋𝘼𝙔 🔟 𝘼𝙀𝘿 𝙁𝙊𝙍 𝘼 𝙍𝘼𝙉𝘿𝙊𝙈 𝙋𝙍𝙊𝘿𝙐𝘾𝙏 𝘼𝙉𝘿 𝙏𝙀𝙎𝙏 𝙔𝙊𝙐𝙍 𝙇𝙐𝘾𝙆? (𝙔𝙀𝙎/𝙉𝙊)🎮:").strip().lower()#GAME INTRO
+           if LUCKY_CHANCE == "yes":  #ENSURING THE USER ANSWER IS CASE INSENSITIVE
+                   LUCKY_CHANCE_MONEY = input(Fore.RED +"𝙋𝙇𝙀𝘼𝙎𝙀 𝙀𝙉𝙏𝙀𝙍 𝙀𝙓𝘼𝘾𝙏𝙇𝙔 🔟 𝘼𝙀𝘿 𝙏𝙊 𝙒𝙄𝙉 𝙏𝙃𝙄𝙎 𝙂𝘼𝙈𝙀(𝙀𝙭𝙖𝙢𝙥𝙡𝙚: 🔟):💰 ").strip()#ASKING MONEY FOR THE GAME
+                   try:
+                       if float(LUCKY_CHANCE_MONEY) == 10: #CONVERTING STRING INTO FLOAT FOR COMPARISON
+                        print(Fore.GREEN + f"𝘾𝙊𝙉𝙍𝘼𝙏𝙀𝙎! 𝙔𝙊𝙐 𝙒𝙊𝙉 {SUGGEST_ITEM}. 𝙋𝙇𝙀𝘼𝙎𝙀 𝘾𝙊𝙇𝙇𝙀𝘾𝙏 𝙄𝙏 𝙒𝙄𝙏𝙃 𝙏𝙃𝙀 𝙊𝙏𝙃𝙀𝙍 𝙄𝙏𝙀𝙈𝙎🏅")#IF THE USER ENTERS THE RIGHT AMOUNT
+                        break
+                       else:
+                        print(Fore.CYAN + "𝙏𝙃𝙀 𝙀𝙉𝙏𝙀𝙍𝙀𝘿 𝘼𝙈𝙊𝙐𝙉𝙏 𝙄𝙎 𝙉𝙊 🔟 𝘼𝙀𝘿. 𝘽𝙀𝙏𝙏𝙀𝙍 𝙇𝙐𝘾𝙆 𝙉𝙀𝙓𝙏 𝙏𝙄𝙈𝙀!🫡")#IF THE USER ENTERS WRONG AMOUNT
+                   except ValueError:
+                     print(Fore.RED +"𝙄𝙉𝙑𝘼𝙇𝙄𝘿 𝙄𝙈𝙋𝙐𝙏! 𝙋𝙇𝙀𝘼𝙎𝙀 𝙀𝙉𝙏𝙀𝙍 𝘼 𝙑𝘼𝙇𝙄𝘿 𝙉𝙐𝙈𝘽𝙀𝙍 𝙁𝙊𝙍 𝙋𝘼𝙔𝙈𝙀𝙉𝙏.🤨")#IF THE USER ENTER WRONG KEYWORD
+           else:
+                print(Fore.CYAN +"𝙉𝙊 𝙋𝙍𝙊𝘿𝙐𝘾𝙏. 𝘽𝙀𝙏𝙏𝙀𝙍 𝙇𝙐𝘾𝙆 𝙉𝙀𝙓𝙏 𝙏𝙄𝙈𝙀!🤗")#IF THE USER SAYS NO FOE THE GAME
 VENDING_MACHINE()
